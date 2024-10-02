@@ -1,0 +1,53 @@
+﻿<Window x:Class="NadajPrzesylkeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nadaj Przesyłkę" Height="350" Width="400">
+    <Grid Margin="10">
+
+        <GroupBox Header="Rodzaj przesyłki" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
+            <StackPanel>
+                <RadioButton Name="RadioPocztowka" Content="Pocztówka" IsChecked="True" GroupName="Przesylka"/>
+                <RadioButton Name="RadioList" Content="List" GroupName="Przesylka"/>
+                <RadioButton Name="RadioPaczka" Content="Paczka" GroupName="Przesylka"/>
+            </StackPanel>
+        </GroupBox>
+
+
+        <GroupBox Header="Dane adresowe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="170,34,0,0" Height="220">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="53*"/>
+                    <ColumnDefinition Width="41*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Ulica z numerem" Grid.Row="0" Grid.ColumnSpan="2" Margin="10,21,-10,5" Grid.RowSpan="2"/>
+                <TextBox Name="UlicaTextBox" Grid.Row="2" Margin="10,3,10,16" Grid.ColumnSpan="2"/>
+
+                <Label Content="Kod pocztowy" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,29,-10,-31"/>
+                <TextBox Name="KodTextBox" Grid.Row="2" Margin="10,60,10,-36" Grid.ColumnSpan="2"/>
+
+                <Label Content="Miasto" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,84,-10,-77"/>
+                <TextBox Name="MiastoTextBox" Grid.Row="2" Margin="10,114,10,-87" Grid.ColumnSpan="2"/>
+            </Grid>
+        </GroupBox>
+
+
+        <Button Content="Sprawdź Cenę" Name="CheckPriceButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="0,73,0,0" Click="CheckPriceButton_Click"/>
+
+
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Margin="0,170,0,0" x:Name="PrzesylkaImage"/>
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Margin="0,170,0,0" x:Name="PaczkaImage"/>
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Margin="0,170,0,0" x:Name="ListImage"/>
+
+
+        <Label Name="CenaLabel" Content="Cena: 1 zł" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,189,0,0" FontWeight="Bold" FontSize="16"/>
+
+
+        <Button Content="Zatwierdź" Name="SubmitButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="10,284,0,0" Click="SubmitButton_Click"/>
+    </Grid>
+</Window>
